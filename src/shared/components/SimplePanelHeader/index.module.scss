@@ -1,0 +1,37 @@
+.panel-header {
+  z-index: 1000;
+
+  &__chevron-plate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+
+    background: rgba(0, 0, 0, 0.62);
+    border: 1px solid #474747;
+  }
+
+  &__time {
+    align-self: center;
+
+    padding: 5px 12px;
+    border-radius: 9px;
+    
+    color:#FFF;
+
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.41px;
+
+    &--light {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    &--dark {
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+}

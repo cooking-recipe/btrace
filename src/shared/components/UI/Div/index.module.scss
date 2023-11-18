@@ -1,0 +1,34 @@
+.div {
+  box-sizing: border-box;
+
+  &--relative {
+    position: relative;
+  }
+
+  &--stretched {
+    width: 100%;
+  }
+
+  &--fit-blank {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+  }
+
+  &--full-height {
+    height: 100vh;
+  }
+
+  &--flex {
+    display: flex;
+
+    &--column {
+      flex-direction: column;
+    }
+
+    &--row {
+      flex-direction: row;
+    }
+  }
+}

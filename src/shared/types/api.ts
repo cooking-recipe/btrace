@@ -1,0 +1,1 @@
+export type SomeType<T> = T;

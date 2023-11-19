@@ -18,7 +18,7 @@ export const TextParent: React.FC<TextParentProps> = ({
     fontWeight: weight || 'inherit',
     fontStyle: fontStyle || 'normal',
     lineHeight: `${lineHeight}%` || 'inherit',
-    textAlign: alignCenter ? 'center' : 'left',
+    textAlign: alignCenter ? 'center' : 'inherit',
     opacity: `${opacity || 100}%`
   };
 

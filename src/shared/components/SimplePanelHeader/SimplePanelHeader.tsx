@@ -1,45 +1,46 @@
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
-import { PanelHeader, PanelHeaderButton, type PanelHeaderProps } from '@vkontakte/vkui';
-import { Icon28ChevronLeft } from '@vkontakte/icons';
+import { PanelHeaderBack, Spacing } from '@vkontakte/vkui';
+import { Icon20KeyOutline } from '@vkontakte/icons';
+import { useInsets } from '@vkontakte/vk-bridge-react';
 
-import { TaskStopwatch } from '../TaskStopwatch';
+import { IconLogo, Text } from '../UI';
 
 import style from './index.module.scss';
 
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import type { PanelHeaderProps } from 'shared/types';
 
-interface Props extends PanelHeaderProps {
-  chevronBackground?: boolean;
-  timeMode?: 'light' | 'dark';
-}
-
-export const SimplePanelHeader: FC<Props> = ({ chevronBackground, timeMode, ...props }) => {
+export const SimplePanelHeader: FC<PanelHeaderProps & PropsWithChildren> = ({ before, keysAmount, children }) => {
   const navigator = useRouteNavigator();
-
-  const chevronIcon = <Icon28ChevronLeft color='#FFF' />;
+  const insets = useInsets();
 
   return (
-    <PanelHeader
-      className={style['panel-header']}
-      fixed={false}
-      before={
-        <>
-          <PanelHeaderButton onClick={() => navigator.back()} aria-label='back button'>
-            {
-              chevronBackground
-                ? (
-                  <div className={style['panel-header__chevron-plate']}>
-                    {chevronIcon}
-                  </div>
-                )
-                : chevronIcon
-            }
-          </PanelHeaderButton>
-          {timeMode && <TaskStopwatch timeMode={timeMode} />}
-        </>
-      }
-      transparent
-      {...props}
-    />
+    <div className={style['panel-header']}>
+      <Spacing size={insets?.top} />
+      <div className={style['panel-header__top-container']}>
+        <div className={style['panel-header__before']}>
+          {before === 'chevron'
+            ? <PanelHeaderBack onClick={() => navigator.back()} />
+            : (
+              <div className={style['panel-header__keys']}>
+                <div className={style['keys__icon-block']}>
+                  <Icon20KeyOutline color='#FFF' className={style.keys__icon} />
+                </div>
+                <div className={style['keys__text-block']}>
+                <Text color='orange-gradient' size={15} weight={600} alignCenter>
+                  {keysAmount || 0}
+                </Text>
+                </div>
+              </div>
+            )
+          }
+        </div>
+        <IconLogo />
+      </div>
+      <Spacing size={28} />
+      <div className={style['panel-header__bottom-container']}>
+        {children}
+      </div>
+    </div>
   );
 };

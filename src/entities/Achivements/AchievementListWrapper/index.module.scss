@@ -1,0 +1,20 @@
+.achievement-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  row-gap: 48px;
+  column-gap: 40px;
+
+  div[role="button"] {
+    flex-basis: calc(33% - 40px * 2 / 3);
+  }
+
+  @media (max-width: 576px) {
+    row-gap: 24px;
+    column-gap: 16px;
+
+    div[role="button"] {
+      flex-basis: calc(50% - 16px / 2);
+    }
+  }
+}

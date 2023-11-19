@@ -1,1 +1,1 @@
-export type ColorType = 'white' | 'black' | 'gradient';
+export type ColorType = 'white' | 'black' | 'white-gradient' | 'orange-gradient';

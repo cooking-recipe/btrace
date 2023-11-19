@@ -28,3 +28,8 @@ export type UniversalContainerProps = HTMLProps<HTMLDivElement>
     onMounted?: (element: HTMLDivElement) => void;
     onGlobalResize?: (element: HTMLDivElement) => void;
   };
+
+export interface PanelHeaderProps {
+  before: 'chevron' | 'keys';
+  keysAmount?: number;
+}

@@ -1,0 +1,21 @@
+.icon-block {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    position: absolute;
+  }
+
+  @media (max-width: 400px) {
+    &__icon {
+      width: 100px;
+    }
+
+    &__plate {
+      width: 136px;
+    }
+  }
+}

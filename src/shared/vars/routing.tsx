@@ -1,5 +1,5 @@
 import {
-  RoutesConfig, createView, createPanel, createRoot, createHashRouter
+  RoutesConfig, createView, createPanel, createRoot, createHashRouter, createModal
 } from '@vkontakte/vk-mini-apps-router';
 
 export const routes = RoutesConfig.create([
@@ -12,7 +12,9 @@ export const routes = RoutesConfig.create([
       createPanel('payment', '/payment')
     ]),
     createView('achievements', [
-      createPanel('achievements', '/achievements')
+      createPanel('achievements', '/achievements', [
+        createModal('achievement-modal', '/achievements/:id', ['id'] as const)
+      ])
     ]),
     createView('referal', [
       createPanel('referal', '/referal')

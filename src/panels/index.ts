@@ -1,1 +1,1 @@
-export * from './AchivementsPanel';
+export * from './Achivements';

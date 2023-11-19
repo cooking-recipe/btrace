@@ -1,0 +1,33 @@
+.lesson-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px;
+  border: 0.32px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+
+  background: #F9F9F9;
+
+  cursor: pointer;
+
+  &__icon-block {
+    min-width: 64px;
+    min-height: 64px;
+    max-width: 64px;
+    max-height: 64px;
+    border-radius: 10px;
+
+    background: var(--orange-gradient);
+  }
+
+  &__text-block {
+    width: 100%;
+  }
+
+  &__status-icon {
+    justify-self: flex-end;
+    margin-right: 0;
+  }
+}

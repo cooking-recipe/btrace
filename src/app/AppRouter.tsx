@@ -1,6 +1,6 @@
 import { Root, SplitCol, SplitLayout, View } from '@vkontakte/vkui';
 import { useActiveVkuiLocation } from '@vkontakte/vk-mini-apps-router';
-import { Achivements } from 'panels';
+import { Achivements, Lessons } from 'panels';
 import { routes } from 'shared/vars';
 
 import { AppModals } from './AppModals';
@@ -17,6 +17,9 @@ export const AppRouter = () => {
           </View> */}
           <View nav={routes.root.achievements.id} activePanel={activePanel || routes.root.achievements.achievements.id}>
             <Achivements nav={routes.root.achievements.achievements.id} />
+          </View>
+          <View nav={routes.root.lessons.id} activePanel={activePanel || routes.root.lessons.lessonsList.id}>
+            <Lessons nav={routes.root.lessons.lessonsList.id} />
           </View>
         </Root>
       </SplitCol>
